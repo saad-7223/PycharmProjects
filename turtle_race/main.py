@@ -6,7 +6,7 @@ sc = Screen()
 sc.setup(width=500, height=400)
 sc.bgcolor("black")
 user_bet = sc.textinput(title="Turtle Race", prompt="which turtle will win the race \n(Red,Yellow,Blue,Green,Orange,"
-                                                   "Purple,White)")
+                                                    "Purple,White)")
 
 turtles = []
 colors = ["red", "yellow", "blue", "green", "orange", "purple", "white"]
@@ -33,6 +33,5 @@ while race_is_on:
                 print(f"You have Lost ! the {winner} turtle was the winner")
         distance = randint(0, 10)
         j.fd(distance)
-
 
 sc.exitonclick()
