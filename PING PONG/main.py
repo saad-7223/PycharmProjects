@@ -5,12 +5,12 @@ from pong_scorecbored import Score
 import time
 
 sc = Screen()
-
 sc.setup(width=800, height=600)
 sc.bgcolor("black")
 sc.title("Ping-pong")
+sc.tracer(100)
 
-sc.tracer(0)
+# CREATING PADDLES
 rp = Paddle(pos=(350, 0))
 lp = Paddle(pos=(-350, 0))
 ball = Ball()
@@ -24,19 +24,24 @@ sc.onkeypress(lp.down, "s")
 
 game_on = True
 while game_on:
-    time.sleep(0.1)
+    time.sleep(ball.ball_speed)
     sc.update()
-    ball.r_move()
+    ball.move()
+
+    # DETECTION WITH WALL
     if ball.ycor() > 280 or ball.ycor() < -280:
         ball.bounce_y()
 
-    if ball.distance(rp) < 60 and ball.xcor() > 320 or ball.distance(lp) < 60 and ball.xcor() < -320:
+    # DETECTION COLLISION WITH PADDLE
+    if ball.distance(rp) < 50 and ball.xcor() > 320 or ball.distance(lp) < 50 and ball.xcor() < -320:
         ball.bounce_x()
 
+    # DETECT R PADDLE MISSES
     if ball.xcor() > 380:
         ball.reset_position()
         score.left_scored()
 
+    # DETECT L PADDLE MISSES
     if ball.xcor() < -380:
         ball.reset_position()
         score.right_scored()

@@ -10,10 +10,10 @@ class Paddle(Turtle):
         self.goto(pos)
 
     def up(self):
-        y = self.ycor() + 20
+        y = self.ycor() + 30
         self.goto(self.xcor(), y)
 
     def down(self):
-        y = self.ycor() - 20
+        y = self.ycor() - 30
         self.goto(self.xcor(), y)
 
