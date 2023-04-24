@@ -1,6 +1,7 @@
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
+from pong_scorecbored import Score
 import time
 
 sc = Screen()
@@ -13,6 +14,7 @@ sc.tracer(0)
 rp = Paddle(pos=(350, 0))
 lp = Paddle(pos=(-350, 0))
 ball = Ball()
+score = Score()
 
 sc.listen()
 sc.onkeypress(rp.up, "Up")
@@ -33,8 +35,10 @@ while game_on:
 
     if ball.xcor() > 380:
         ball.reset_position()
+        score.left_scored()
 
     if ball.xcor() < -380:
         ball.reset_position()
+        score.right_scored()
 
 sc.exitonclick()
