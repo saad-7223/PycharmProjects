@@ -21,8 +21,9 @@ class Scorebored(Turtle):
     def scored(self):
         self.score += 1
         self.clear()
-        self.update_scorebored()
         self.Highscore()
+        self.update_scorebored()
+
 
     def gameover(self):
         self.goto(0, 0)

@@ -26,6 +26,7 @@ game_on = True
 while game_on:
     sc.update()
     time.sleep(0.1)
+    # score.Highscore()
     # MOVES THE SNAKE
     snake.move()
     # COLLISION DETECTION
