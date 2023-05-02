@@ -13,7 +13,9 @@ import pandas as pd
 
 data = pd.read_csv("weather_data.csv")
 temp = data['temp'].to_list()
-print(temp)
+# print(data)
 
-maximum = data['temp'].max()
-print(maximum)
+# maximum = data['temp'].max()
+# print(maximum)
+
+print(data[data.day == 'Friday'])
