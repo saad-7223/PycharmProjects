@@ -19,3 +19,4 @@ temp = data['temp'].to_list()
 # print(maximum)
 
 print(data[data.day == 'Friday'])
+print(data[data.temp == data.temp.max()])
