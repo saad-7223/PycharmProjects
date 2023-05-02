@@ -18,5 +18,9 @@ temp = data['temp'].to_list()
 # maximum = data['temp'].max()
 # print(maximum)
 
-print(data[data.day == 'Friday'])
-print(data[data.temp == data.temp.max()])
+friday = (data[data.day == 'Friday']).temp
+cal_to_fahrenheit = (friday*(9/5))+32
+print(cal_to_fahrenheit)
+
+
+
