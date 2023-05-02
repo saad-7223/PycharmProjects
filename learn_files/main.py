@@ -13,7 +13,7 @@ import pandas as pd
 
 data = pd.read_csv("weather_data.csv")
 temp = data['temp'].to_list()
+print(temp)
 
-avg_temp = round(sum(temp)/len(temp), 2)
-print(avg_temp)
-
+maximum = data['temp'].max()
+print(maximum)
