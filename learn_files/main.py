@@ -21,3 +21,4 @@ import pandas as pd
 # student_data.to_csv("student.csv")
 
 squirrel = pd.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+s_dict = squirrel.to_dict()
