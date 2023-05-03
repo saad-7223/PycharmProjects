@@ -22,3 +22,4 @@ import pandas as pd
 
 squirrel = pd.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
 s_dict = squirrel.to_dict()
+print(s_dict['Primary Fur Color'])
