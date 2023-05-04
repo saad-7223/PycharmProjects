@@ -21,7 +21,15 @@ import pandas as pd
 # student_data.to_csv("student.csv")
 
 # making a table of different furs and their count
-squirrel = pd.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
-squirrel_data = pd.DataFrame(squirrel)
-print(squirrel_data['Primary Fur Color'].value_counts())
 
+# reads the csv file
+squirrel = pd.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+
+# creates a dataframe to work on
+squirrel_data = pd.DataFrame(squirrel)
+
+# gets the Primary fur color and its counts
+task = squirrel_data['Primary Fur Color'].value_counts()
+
+# convert to csv file
+task.to_csv("squirrel_count.csv")
