@@ -31,5 +31,7 @@ squirrel_data = pd.DataFrame(squirrel)
 # gets the Primary fur color and its counts
 task = squirrel_data['Primary Fur Color'].value_counts()
 
-# convert to csv file
-task.to_csv("squirrel_count.csv")
+# # convert to csv file
+# task.to_csv("squirrel_count.csv")
+
+print(squirrel_data['X'] == "-73.9570437717691")
