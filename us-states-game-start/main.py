@@ -36,4 +36,9 @@ while len(guessed_state) < 50:
     if ans == "Exit":
         break
 
-
+not_learned = []
+for state in all_states:
+    if state not in guessed_state:
+        not_learned.append(state)
+to_learn = pd.DataFrame(not_learned)
+to_learn.to_csv("states_to_learn")
