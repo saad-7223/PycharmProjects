@@ -22,6 +22,9 @@ while len(guessed_state) <= 50:
     ans = ans[0].upper() + ans[1:]
     turtle.onscreenclick(get_mouse_click_co_or)
 
+    if ans == "exit":
+        break
+
     if ans in all_states:
         guessed_state.append(ans)
         t = turtle.Turtle()
