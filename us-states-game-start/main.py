@@ -3,8 +3,8 @@ import pandas as pd
 
 guessed_state = []
 screen = turtle.Screen()
-screen.setup(width=452, height=499)
-img = "new_map.gif"
+screen.setup(width=600, height=723)
+img = "gifgit.gif"
 screen.addshape(img)
 turtle.shape(img)
 
