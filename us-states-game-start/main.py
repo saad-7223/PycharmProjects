@@ -11,19 +11,18 @@ turtle.shape(img)
 data = pd.read_csv("50_states.csv")
 all_states = data.state.to_list()
 
+
 def get_mouse_click_co_or(x, y):
     print(x, y)
 
 
-while len(guessed_state) <= 50:
+turtle.onscreenclick(get_mouse_click_co_or)
+
+while len(guessed_state) < 50:
 
     screen.title(f"{len(guessed_state)}/50 States covered")
-    ans = screen.textinput(title="Guess the state", prompt="state the name ?")
+    ans = screen.textinput(title="Guess the state", prompt="state the name ?").title()
     ans = ans[0].upper() + ans[1:]
-    turtle.onscreenclick(get_mouse_click_co_or)
-
-    if ans == "exit":
-        break
 
     if ans in all_states:
         guessed_state.append(ans)
@@ -34,4 +33,7 @@ while len(guessed_state) <= 50:
         t.goto(int(state_data.x), int(state_data.y))
         t.write(f'{ans}', align='center', font=('courier', 9, 'normal'))
 
-screen.mainloop()
+    if ans == "Exit":
+        break
+
+
