@@ -34,11 +34,11 @@ while len(guessed_state) < 50:
         t.write(f'{ans}', align='center', font=('courier', 9, 'normal'))
 
     if ans == "Exit":
+        not_learned = []
+        for state in all_states:
+            if state not in guessed_state:
+                not_learned.append(state)
+        to_learn = pd.DataFrame(not_learned)
+        to_learn.to_csv("states_to_learn")
         break
 
-not_learned = []
-for state in all_states:
-    if state not in guessed_state:
-        not_learned.append(state)
-to_learn = pd.DataFrame(not_learned)
-to_learn.to_csv("states_to_learn")
