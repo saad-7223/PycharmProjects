@@ -3,7 +3,7 @@ import pandas as pd
 
 guessed_state = []
 screen = turtle.Screen()
-screen.setup(width=600, height=723)
+screen.setup(width=800, height=964)
 img = "gifgit.gif"
 screen.addshape(img)
 turtle.shape(img)
@@ -31,7 +31,7 @@ while len(guessed_state) < 50:
         t.hideturtle()
         state_data = data[data.state == ans]
         t.goto(int(state_data.x), int(state_data.y))
-        t.write(f'{ans}', align='center', font=('courier', 9, 'normal'))
+        t.write(f'{ans}', align='center', font=('courier', 9, 'bold'))
 
     if ans == "Exit":
         not_learned = []
