@@ -19,6 +19,14 @@ all_states = data.state.to_list()
 def get_mouse_click_co_or(x, y):
     print(x, y)
 
+def update():
+    t2 = turtle.Turtle()
+    t2.hideturtle()
+    t2.pu()
+    t2.goto(score_pos)
+    t2.clear()
+    t2.write(f'SCORE :{score}', align='center', font=score_font)
+
 
 turtle.onscreenclick(get_mouse_click_co_or)
 
@@ -27,7 +35,7 @@ while len(guessed_state) < 50:
     screen.title(f"{len(guessed_state)}/50 States covered")
     ans = screen.textinput(title="Guess the state", prompt="state the name ?").title()
     ans = ans[0].upper() + ans[1:]
-    score =
+    score = len(guessed_state)
 
     if ans in all_states:
         guessed_state.append(ans)
@@ -36,7 +44,8 @@ while len(guessed_state) < 50:
         t.hideturtle()
         state_data = data[data.state == ans]
         t.goto(int(state_data.x), int(state_data.y))
-        t.write(f'{len(guessed_state)}', align='center', font=('courier', 9, 'bold'))
+        t.write(f'{ans}', align='center', font=state_font)
+        update()
 
     if ans == "Exit":
         not_learned = []
