@@ -16,22 +16,17 @@ turtle.shape(img)
 data = pd.read_csv("50_states.csv")
 all_states = data.state.to_list()
 
-# count = turtle.Turtle()
-# count.speed(0)
-# count.pu()
-# count.goto(-304, 442)
-# counter = 0
 
 def get_mouse_click_co_or(x, y):
     print(x, y)
 
-def update():
+def update(s):
     t2 = turtle.Turtle()
     t2.hideturtle()
     t2.pu()
     t2.goto(score_pos)
     t2.clear()
-    t2.write(f'SCORE :{score}', align='center', font=score_font)
+    t2.write(f'SCORE :{s}', align='center', font=score_font)
 
 
 turtle.onscreenclick(get_mouse_click_co_or)
@@ -43,12 +38,6 @@ while len(guessed_state) < 50:
     ans = ans[0].upper() + ans[1:]
     score = len(guessed_state)
 
-    # for c in range(3):
-    #     counter = 3 - c
-    #     count.clear()
-    #     count.write(counter, align='center', font=('arial', 24, 'bold'))
-    #     time.sleep(1)
-
     if ans in all_states:
         guessed_state.append(ans)
         t = turtle.Turtle()
@@ -57,7 +46,7 @@ while len(guessed_state) < 50:
         state_data = data[data.state == ans]
         t.goto(int(state_data.x), int(state_data.y))
         t.write(f'{ans}', align='center', font=state_font)
-        update()
+        update(score)
 
     if ans == "Exit":
         not_learned = []
