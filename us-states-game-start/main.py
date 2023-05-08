@@ -37,7 +37,6 @@ while len(guessed_state) < 50:
         state_data = data[data.state == ans]
         t.goto(int(state_data.x), int(state_data.y))
         t.write(f'{len(guessed_state)}', align='center', font=('courier', 9, 'bold'))
-        score_update()
 
     if ans == "Exit":
         not_learned = []
