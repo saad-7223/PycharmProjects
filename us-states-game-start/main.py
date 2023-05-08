@@ -1,5 +1,6 @@
 import turtle
 import pandas as pd
+import time
 
 score_pos = (-301, 439)
 score_font = ('courier', 20, 'bold')
@@ -15,6 +16,11 @@ turtle.shape(img)
 data = pd.read_csv("50_states.csv")
 all_states = data.state.to_list()
 
+# count = turtle.Turtle()
+# count.speed(0)
+# count.pu()
+# count.goto(-304, 442)
+# counter = 0
 
 def get_mouse_click_co_or(x, y):
     print(x, y)
@@ -36,6 +42,12 @@ while len(guessed_state) < 50:
     ans = screen.textinput(title="Guess the state", prompt="state the name ?").title()
     ans = ans[0].upper() + ans[1:]
     score = len(guessed_state)
+
+    # for c in range(3):
+    #     counter = 3 - c
+    #     count.clear()
+    #     count.write(counter, align='center', font=('arial', 24, 'bold'))
+    #     time.sleep(1)
 
     if ans in all_states:
         guessed_state.append(ans)
