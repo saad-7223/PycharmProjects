@@ -1,6 +1,10 @@
 import turtle
 import pandas as pd
 
+score_pos = (-301, 439)
+score_font = ('courier', 20, 'bold')
+state_font = ('courier', 9, 'bold')
+
 guessed_state = []
 screen = turtle.Screen()
 screen.setup(width=800, height=964)
@@ -32,6 +36,12 @@ while len(guessed_state) < 50:
         state_data = data[data.state == ans]
         t.goto(int(state_data.x), int(state_data.y))
         t.write(f'{ans}', align='center', font=('courier', 9, 'bold'))
+        t2 = turtle.Turtle()
+        t2.hideturtle()
+        t2.pu()
+        t2.goto(score_pos)
+        t2.clear()
+        t2.write(f"SCORE : {len(guessed_state)}", align='center', font=score_font)
 
     if ans == "Exit":
         not_learned = []
@@ -41,6 +51,4 @@ while len(guessed_state) < 50:
         to_learn = pd.DataFrame(not_learned)
         to_learn.to_csv("states_to_learn")
         break
-
-
-
+# turtle.mainloop()
