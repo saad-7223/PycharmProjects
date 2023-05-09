@@ -25,3 +25,6 @@ print(l)
 x = [a*2 for a in range(1, 5)]
 # the above list comprehension will double the given numbers value
 print(x)
+
+# learning about the conditional list comprehension
+# Syntax : new_list = [new_item for item in list if test]
