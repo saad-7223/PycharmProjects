@@ -14,3 +14,10 @@ for number in no:
     new_l.append(add)
 print(new_l)
 # this is pretty lengthy ....
+
+# trying with strings
+
+name = 'fur'
+l = [letter for letter in name]
+print(l)
+
