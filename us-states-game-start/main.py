@@ -40,11 +40,7 @@ while len(guessed_state) < 50:
         update(score)
 
     if ans == "Exit":
-        not_learned = []
-        for state in all_states:
-            if state not in guessed_state:
-                not_learned.append(state)
+        not_learned = [not_learned.append(state) for state in all_states if state not in guessed_state]
         to_learn = pd.DataFrame(not_learned)
         to_learn.to_csv("states_to_learn")
         break
-# turtle.mainloop()
