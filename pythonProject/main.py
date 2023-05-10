@@ -34,5 +34,7 @@ print(newl)
 
 # challenge 3
 num = [1, 1, 2, 3, 8, 13, 21, 34, 55]
-squared_list = [i*i for i in num]
+squared_list = [i * i for i in num]
 print(squared_list)
+result = [j for j in num if j % 2 == 0]
+print(result)
