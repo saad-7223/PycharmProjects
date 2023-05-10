@@ -28,6 +28,6 @@ print(x)
 
 # learning about the conditional list comprehension
 # Syntax : new_list = [new_item for item in list if test]
-names = ['alex', 'betty', 'dave']
-newl = [let for let in names if len(let) <= 4]
+names = ['alex', 'betty', 'dave', 'caroline']
+newl = [let.upper() for let in names if len(let) > 5]
 print(newl)
