@@ -22,7 +22,7 @@ l = [letter for letter in name]
 print(l)
 
 # trying angela's challenge
-x = [a*2 for a in range(1, 5)]
+x = [a * 2 for a in range(1, 5)]
 # the above list comprehension will double the given numbers value
 print(x)
 
@@ -31,3 +31,8 @@ print(x)
 names = ['alex', 'betty', 'dave', 'caroline']
 newl = [let.upper() for let in names if len(let) > 5]
 print(newl)
+
+# challenge 3
+num = [1, 1, 2, 3, 8, 13, 21, 34, 55]
+squared_list = [i*i for i in num]
+print(squared_list)
