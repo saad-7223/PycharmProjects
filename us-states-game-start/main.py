@@ -2,8 +2,8 @@ import turtle
 import pandas as pd
 import time
 
-score_pos = (-301, 439)
-score_font = ('courier', 20, 'bold')
+# score_pos = (-301, 439)
+# score_font = ('courier', 20, 'bold')
 state_font = ('courier', 9, 'bold')
 
 guessed_state = []
@@ -20,14 +20,6 @@ all_states = data.state.to_list()
 def get_mouse_click_co_or(x, y):
     print(x, y)
 
-def update(s):
-    t2 = turtle.Turtle()
-    t2.hideturtle()
-    t2.pu()
-    t2.goto(score_pos)
-    t2.clear()
-    t2.write(f'SCORE :{s}', align='center', font=score_font)
-
 
 turtle.onscreenclick(get_mouse_click_co_or)
 
@@ -36,7 +28,6 @@ while len(guessed_state) < 50:
     screen.title(f"{len(guessed_state)}/50 States covered")
     ans = screen.textinput(title="Guess the state", prompt="state the name ?").title()
     ans = ans[0].upper() + ans[1:]
-    score = len(guessed_state)
 
     if ans in all_states:
         guessed_state.append(ans)
