@@ -16,7 +16,10 @@ weather_c = {
 # twist : no using direct dictionary
 
 # step 1: creating a dictionary
-# list_of_days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+# step 2: converting the given temp
+
 fahren_temp = {day: round(((temp_c * (9 / 5)) + 32), 2) for (day, temp_c) in weather_c.items()}
+
+# step 3: dispplaying the new dictionary
 for k, v in fahren_temp.items():
     print(k, v)
