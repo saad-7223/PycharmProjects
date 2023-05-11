@@ -17,5 +17,6 @@ weather_c = {
 
 # step 1: creating a dictionary
 # list_of_days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
-fahren_temp = {day: (temp_c * (9 / 5)) + 32 for (day, temp_c) in weather_c.items()}
-print(fahren_temp)
+fahren_temp = {day: round(((temp_c * (9 / 5)) + 32), 2) for (day, temp_c) in weather_c.items()}
+for k, v in fahren_temp.items():
+    print(k, v)
