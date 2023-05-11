@@ -32,3 +32,8 @@ for (index, row) in phone_frame.iterrows():
     new_dict[row.letter] = row.code
 
 # TODO 2. Create a list of the phonetic code words from a word that the user inputs.
+letter = input("enter a letter").upper()
+
+# using the list comprehension to create a list of phonetic codes
+phonetic_codes = [row.code for (index, row) in phone_frame.iterrows() if letter == row.letter]
+print(phonetic_codes)
