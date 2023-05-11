@@ -14,3 +14,8 @@ weather_c = {
 # task :  convert each temp to fahrenheit
 # formula = (temp_c * 9/5)+ 32
 # twist : no using direct dictionary
+
+# step 1: creating a dictionary
+# list_of_days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+fahren_temp = {day: (temp_c * (9 / 5)) + 32 for (day, temp_c) in weather_c.items()}
+print(fahren_temp)
