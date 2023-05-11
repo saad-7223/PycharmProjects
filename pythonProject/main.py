@@ -13,3 +13,4 @@ weather_c = {
 }
 # task :  convert each temp to fahrenheit
 # formula = (temp_c * 9/5)+ 32
+# twist : no using direct dictionary
