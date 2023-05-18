@@ -7,3 +7,5 @@ def add(*args):
         sum += i
     return sum
 
+def cal(**kwargs):
+    pass
